@@ -18,12 +18,12 @@ const User = sequelize.define('user', { // sequelize.define is used to define ne
     },
 
     password: Sequelize.STRING,
-    // ispremiumuser : Sequelize.BOOLEAN,
+    ispremiumuser : Sequelize.BOOLEAN,
 
-    // totalExpenses: {
-    //     type: Sequelize.INTEGER,
-    //     defaultValue: 0
-    // }
+    totalExpenses: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0
+    }
 })
 
 module.exports = User;

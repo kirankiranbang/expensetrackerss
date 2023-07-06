@@ -21,7 +21,7 @@ const Order = require('./models/orders');
 const userRoutes = require('./routes/user');
 const expenseRoutes = require('./routes/expense');
 const purchaseRoutes = require('./routes/purchase');
-// const premiumFeatureRoutes = require('./routes/premiumFeature');
+const premiumFeatureRoutes = require('./routes/premiumFeature');
 // const resetPasswordRoutes = require('./routes/resetpassword')
 // const downloadroutes = require('./routes/user')
 
@@ -34,7 +34,7 @@ app.use(express.json());  //this is for handling jsons
 app.use('/user', userRoutes);
 app.use('/expense', expenseRoutes);
 app.use('/purchase', purchaseRoutes);
-// app.use('/premium', premiumFeatureRoutes);
+app.use('/premium', premiumFeatureRoutes);
 // app.use('/password', resetPasswordRoutes);
 
 // app.use((req, res) => {
