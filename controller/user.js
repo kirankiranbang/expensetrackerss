@@ -2,11 +2,14 @@ const User = require('../models/users');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-function isstringinvalid(string){
+function isstringinvalid(string)
+{
     if(string == undefined ||string.length === 0)
     {
         return true
-    } else 
+    } 
+    
+    else 
     {
         return false
     }
@@ -27,7 +30,8 @@ function isstringinvalid(string){
 
        const saltrounds = 10; // indicate number of saltround to use when hashing the password
 
-       bcrypt.hash(password, saltrounds, async (err, hash) => { // bcrypt.hash is called to generate a hash of the
+       bcrypt.hash(password, saltrounds, async (err, hash) => 
+       { // bcrypt.hash is called to generate a hash of the
        // password using the provided salt rounds. it passes a callback function that takes err and hash as parameters
         console.log(err);
 
@@ -42,7 +46,8 @@ function isstringinvalid(string){
 
 }
 
-const generateAccessToken = (id, name, ispremiumuser) => {
+const generateAccessToken = (id, name, ispremiumuser) => 
+{
     return jwt.sign({ userId : id, name: name, ispremiumuser } ,'secretkey');
 }
 
@@ -84,12 +89,12 @@ const login = async (req, res) => { // login fn receives request and response as
             {
             return res.status(400).json({success: false, message: 'Password is incorrect'})
            }
-        })
+          })
         }
          else 
          {
             return res.status(404).json({success: false, message: 'User Doesnot exist'})
-        }
+          }
     }
     catch(err)
     {

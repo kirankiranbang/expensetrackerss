@@ -5,7 +5,8 @@ const userController = require('./user')
 const purchasepremium = async (req, res) => {
     try {
         
-        var rzp = new RAZORPAY({
+
+        var rzp = new RAZORPAY({ 
              key_id: process.env.RAZORPAY_KEY_ID,
            
             key_secret: process.env.RAZORPAY_KEY_SECRET
