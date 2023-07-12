@@ -11,8 +11,8 @@ const dotenv = require('dotenv');
 // const privateKey=fs.readFileSync('server.key');
 // const certificate=fs.readFileSync('server.key');
 
-// const helmet=require('helmet');
-// const compression=require('compression')
+const helmet=require('helmet');
+const compression=require('compression')
 
 
 var cors = require('cors')
@@ -27,8 +27,8 @@ dotenv.config();
 
 const sequelize = require('./util/database');
 app.use(cors());
-// app.use(helmet());
-// app.use(compression())
+app.use(helmet());
+app.use(compression())
 app.use(express.json());  //this is for handling jsons
 // get config vars
 

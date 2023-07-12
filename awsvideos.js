@@ -21,7 +21,7 @@
 
 
 //commend
-//pwd
+
 
 
 //connect
