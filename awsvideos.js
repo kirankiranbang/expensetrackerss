@@ -22,3 +22,19 @@
 
 //commend
 //pwd
+
+
+//connect
+//click on link
+//ec2 instance connect
+// down click on connect
+// step1: curl --silent --location https://rpm.nodesource.com/setup_4.x | bash -
+
+
+
+// step2:yum -y install nodejs
+
+// step3:yum install git
+// y
+// step4:git clone (link paste)
+
