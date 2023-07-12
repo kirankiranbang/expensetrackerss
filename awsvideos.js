@@ -28,6 +28,8 @@
 //click on link
 //ec2 instance connect
 // down click on connect
+//sudo su
+
 // step1: curl --silent --location https://rpm.nodesource.com/setup_4.x | bash -
 
 

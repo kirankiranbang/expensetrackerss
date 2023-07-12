@@ -32,5 +32,13 @@
     "validator": "^13.9.0"
   },
   "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kirankiranbang/expensetracker-mainss.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kirankiranbang/expensetracker-mainss/issues"
+  },
+  "homepage": "https://github.com/kirankiranbang/expensetracker-mainss#readme",
   "description": ""
 }
