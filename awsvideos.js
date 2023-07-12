@@ -11,3 +11,14 @@
 
 // //npm cache clean --force
 
+
+
+//EC2 VIDEO
+//----------------
+
+// https://youtu.be/Ee5nOufD9Q4
+
+
+
+//commend
+//pwd

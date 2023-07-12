@@ -4,13 +4,34 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const sib = require('sib-api-v3-sdk');
 const dotenv = require('dotenv');
-app.use(express.json());  //this is for handling jsons
-// get config vars
-dotenv.config();
+
+
+// const fs=require('fs')
+// const https=require('https');
+// const privateKey=fs.readFileSync('server.key');
+// const certificate=fs.readFileSync('server.key');
+
+// const helmet=require('helmet');
+// const compression=require('compression')
+
 
 var cors = require('cors')
+dotenv.config();
+
+// const morgan=require('morgan')
+// app.use(morgan('combined'));
+
+
+
+
+
 const sequelize = require('./util/database');
 app.use(cors());
+// app.use(helmet());
+// app.use(compression())
+app.use(express.json());  //this is for handling jsons
+// get config vars
+
 app.use(bodyParser.json({ extended: false })); ////this is for handling forms
 
 
@@ -56,7 +77,11 @@ Forgotpassword.belongsTo(User);
 
 sequelize.sync()
     .then(() => {
-        app.listen(4000);
+        
+    app.listen(process.env.PORT);
+    // https.createServer({key:privateKey,cert:certificate},app).listen(process.env.PORT);
+
+
     })
     .catch(err => {
         console.log(err);

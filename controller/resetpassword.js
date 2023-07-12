@@ -22,13 +22,12 @@ const forgotpassword = async (req, res, next) => {
 
             const client = sib.ApiClient.instance   
             const apiKey = client.authentications['api-key']
-            console.log( 'xsmtpsib-cf8c64d192584f881521ce86cf555849f9c4ab6c44564a151651fc97e4ed4e75-7Zd2BSb3CTNLtsaX')
-
+           
             apiKey.apiKey = process.env.API_KEY       
             const tranEmailApi = new sib.TransactionalEmailsApi(); // we can send emails
             
             const sender = {   // The sender's email has to be the email account that you have used for the SendinBlue account
-                email: 'kiranab433@gmail.com',
+                email: 'kirankiranbang@gmail.com',
                 name: 'kiran B',
             }        
                 
