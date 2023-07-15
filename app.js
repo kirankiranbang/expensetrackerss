@@ -1,3 +1,7 @@
+//dont use morgan and helmet if using throw error  refeused to load script of axios and boot strap and delete node modules and again install and delete from package.json and clear browing histroy
+
+
+
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -11,7 +15,7 @@ const dotenv = require('dotenv');
 // const privateKey=fs.readFileSync('server.key');
 // const certificate=fs.readFileSync('server.key');
 
-const helmet=require('helmet');
+// const helmet=require('helmet');
 const compression=require('compression')
 
 
@@ -27,9 +31,10 @@ dotenv.config();
 
 const sequelize = require('./util/database');
 app.use(cors());
-app.use(helmet());
+// app.use(helmet());
 app.use(compression())
 app.use(express.json());  //this is for handling jsons
+
 // get config vars
 
 app.use(bodyParser.json({ extended: false })); ////this is for handling forms
@@ -53,6 +58,7 @@ const downloadroutes = require('./routes/user')
 
 
 
+app.use(express.static('public'));
 
 app.use('/user', userRoutes);
 app.use('/expense', expenseRoutes);
@@ -61,10 +67,14 @@ app.use('/premium', premiumFeatureRoutes);
 app.use('/password', resetPasswordRoutes);
 
 
-// app.use((req, res) => {n
-//     console.log('urlll', req.url);
-//     res.sendFile(path.join(__dirname, `ExpenseTrackerFrontend/${req.url}`))
-// })
+
+
+app.use((req, res) => {
+    console.log('url', req.url);
+    res.sendFile(path.join(__dirname, `ExpenseTrackerFrontend/${req.url}`))
+})
+
+//http://localhost:4000/Signup/signup.html   it go through folder structure
 
 User.hasMany(Expense);
 Expense.belongsTo(User);
@@ -75,7 +85,7 @@ Expense.belongsTo(User);
 User.hasMany(Forgotpassword);
 Forgotpassword.belongsTo(User);
 
-sequelize.sync()
+sequelize.sync({force:true})
     .then(() => {
         
     app.listen(process.env.PORT);

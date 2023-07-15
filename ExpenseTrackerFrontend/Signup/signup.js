@@ -1,3 +1,4 @@
+console.log("js loaad");
 async function signup(e){   // async keyword allows the use of await keyword inside the function body
     // function receives event object 'e' as parameter
     try{
@@ -12,12 +13,20 @@ async function signup(e){   // async keyword allows the use of await keyword ins
         }
         console.log(signupDetails);
 
-        const response = await axios.post("http://localhost:4000/user/signup", signupDetails);
+        const response = await axios.post('http://16.171.177.30:4000/user/signup', signupDetails);
+        
+        //http://16.171.177.30:4000/Signup/signup.html   
+        // http://16.171.177.30:4000/user/signup
+             //http://localhost:4000/Signup/signup.html   
         // send POST request to "ht..." endpoint with signupDetails object as the request body. await 
         // keyword is used to wait for the response to be received before proceeding
         if(response.status === 201){// indicate successful signup. window.location assumes that the user is in web environment
             alert("SignUp successful now Login");
-            window.location.href = "../Login/login.html"; // change the page on successful login
+            window.location.href = "../Login/login.html";
+            
+            
+
+            // change the page on successful login
         }
         else{
             throw new Error('Failed to login')

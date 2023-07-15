@@ -8,7 +8,8 @@ function login(e) { // handles form submission event e
     }
 
     console.log(loginDetails);
-    axios.post('http://localhost:4000/user/login', loginDetails).then(response => {
+    axios.post('http://16.171.177.30:4000/user/login', loginDetails).then(response => {
+        //http://localhost:4000/Login/login.html//
         // send POST request to "htt..." endpoint with loginDetails as request body. This function returns 
         // promise so that we can use .then() and .catch() to handle response
         alert(response.data.message); // callback function is executed with response object as its parameters
